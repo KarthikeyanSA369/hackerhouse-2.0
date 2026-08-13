@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-gold: #E8B83D;
+  --color-deep-green: #0A2B1D;
+  --color-coral: #E26A7A;
+  --color-sage: #355C48;
+  --color-cream: #F6F2E5;
+}
+
+:root {
+  --background: #0A2B1D;
+  --foreground: #FAF5E8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Perfect Aspect Ratio Container for Pixel-Accurate Overlay Positioning */
+.overlay-canvas {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1414 / 795;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Custom Scrollbar for vibe templates list */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 5px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(250, 245, 232, 0.05);
+  border-radius: 99px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #E8B83D;
+  border-radius: 99px;
+}
+
+/*
+ * The artwork is supplied as flattened images. These discreet masks remove the
+ * masthead and the residency chip while keeping every interactive area of the
+ * three-step builder intact. Their gradients match the surrounding illustrated
+ * sky so the removal holds up at both desktop and mobile canvas sizes.
+ */
+.brand-mask {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.brand-mask--hero {
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 10%;
+  background: linear-gradient(145deg, #154a30 0%, #0b492d 55%, #0d4a2e 100%);
+}
+
+.brand-mask--vibe {
+  top: 0;
+  left: 14%;
+  width: 27%;
+  height: 9%;
+  background: linear-gradient(110deg, #07502e 0%, #075432 45%, #0a5231 100%);
+}
+
+.brand-mask--builder {
+  top: 0;
+  left: 15%;
+  width: 26%;
+  height: 9%;
+  background: linear-gradient(110deg, #07482c 0%, #0b4b2d 48%, #0c492c 100%);
+}
+
+.brand-mask--residency {
+  top: 1.8%;
+  right: 16%;
+  width: 14%;
+  height: 7.5%;
+  border-radius: 999px;
+  background: #0b4a2c;
+}
